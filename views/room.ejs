@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        const ROOM_ID = "<%= roomId %>"
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.0/simplepeer.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="client.js" defer></script>
+    <title>Video-Chat</title>
+    <style>
+        #video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 300px);
+            grid-auto-rows: 300px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    You are now in room
+    <h4>
+        <%= roomId %>
+    </h4>
+    <button id="call">Call</button>
+    <input placeholder="Enter the address" type="text" id="friend__code">
+    <br>
+    <button id="answer">Answer</button>
+    <input type="text" id="answer__code">
+    <br>
+    <audio controls/>
+    <div id="video-grid"></div>
+</body>
+
+</html>
